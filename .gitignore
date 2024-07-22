@@ -1,0 +1,28 @@
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+.VENV/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+
+# Jupyter config
+.jupyter/
+.local/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
