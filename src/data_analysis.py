@@ -1,9 +1,10 @@
 import os
 import pandas as pd
 
-def load_preprocessed_data():
+def load_preprocessed_data(filepath):
+    print(filepath)
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    processed_data_path = os.path.join(current_dir, '../data/processed/processed_co2_emissions.csv')
+    processed_data_path = os.path.join(current_dir, filepath)
     df = pd.read_csv(processed_data_path)
     return df
 
@@ -14,7 +15,8 @@ def summarize_stats(df):
     print(summary_stats)
 
 def main():
-    df = load_preprocessed_data()
+    processed_co2_emissions_file = '../data/processed/processed_co2_emissions.csv'
+    df = load_preprocessed_data(processed_co2_emissions_file)
     summarize_stats(df)
 
 main()
