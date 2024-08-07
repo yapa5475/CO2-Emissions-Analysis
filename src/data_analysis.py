@@ -41,8 +41,23 @@ def main(filepath, debug=False):
     filepath (str): Path to the CSV file to be processed.
     """
     # processed_co2_emissions_file = '../data/processed/processed_co2_emissions.csv'
-    df = load_preprocessed_data(filepath)
-    summarize_stats(df)
+    df = load_preprocessed_data(filepath, debug)
+    while True:
+        print("\nMenu")
+        print("1. Print summary statistics")
+        print("2. Exit")
+        choice = input("Enter your choice: ")
+        print(choice)
+        choice = int(choice)
+        
+        if(choice == None):
+            print("You must select a valid input")
+        if(choice == 1):
+            summarize_stats(df)
+        elif(choice == 2):
+            break
+        else:
+            print("Invalid choice, please input a valid option")
 
 if __name__ == "__main__":
     # Set up argument parser
